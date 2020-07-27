@@ -1,0 +1,167 @@
+body {
+	margin: 0;
+}
+.header-menu {
+	background: #2d3436;
+}
+.header-menu:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.header-menu .menu {
+	background: #0984e3;
+	display: none;
+	padding: 10px;
+	color: white;
+	text-decoration: none;
+}
+.header-menu ul {
+	list-style: none;
+	margin: 0;
+}
+
+.header-menu ul li {
+	float: left;
+	
+}
+
+.header-menu ul li a {
+	text-decoration: none;
+	padding: 10px 10px;
+	display: block;
+	color: white;
+}
+.header-menu ul li:hover a,
+.header-menu ul li .active {
+	background: #7f8fa6;
+}
+
+
+@media all and (max-width: 768px) {
+	.header-menu .menu {
+		display: block;
+	}
+	.header-menu ul {
+		padding: 0;
+		display: none;
+	}
+	.header-menu ul li {
+		float: none;
+	}
+}
+
+@media all and(min-width: 768px){
+	.alert {
+		width: 30%;
+	}
+}
+
+.attention {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #E35DA0;
+	z-index: 9999;
+}
+
+.alert-bg {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(255, 255, 255, 0.95);
+	z-index: 9999;
+}
+.alert {
+	text-align: center;
+	margin: 115px auto;
+	z-index: 2;
+	border-top: 2px dotted red;
+	border-bottom: 2px dotted red;
+}
+.alert h4 {
+	padding: 10px ;
+	color: red;
+	border-radius: 4px;
+}
+.alert h1 {
+	color: red;
+}
+
+.box .content {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: pink;
+}
+
+.box {
+	width: 300px;
+	height: 300px;
+	box-sizing: border-box;
+	padding: 15px;
+	position: relative;
+	overflow: hidden;
+	margin: 130px auto;
+
+}
+
+.box::before {
+	content: '';
+	position: absolute;
+	width: 150%;
+	height: 150%;
+	background: repeating-linear-gradient(
+			white 0%,
+			white 7.5px,
+			hotpink 7.5px,
+			hotpink 15px,
+			white 15px,
+			white 22.5px,
+			hotpink 22.5px,
+			hotpink 30px);
+	transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+	animation: animate 20s linear infinite;
+}
+
+.box .content {
+	position: relative;
+	background-color: white;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 30px;
+	text-align: center;
+	font-family: sans-serif;
+	z-index: 2;
+}
+
+.box,
+.box .content {
+	box-shadow: 0 0 2px deeppink,
+				0 0 5px rgba(0, 0, 0, 1),
+				inset 0 0 5px rgba(0, 0, 0, 1);
+	border-radius: 10px;
+}
+
+.box .content h2 {
+	color: deeppink;
+}
+
+.box .content p {
+	color: dimgray;
+}
+
+@keyframes animate {
+	from {
+		background-position: 0;
+	}
+
+	to {
+		background-position: 0 450px;
+	}
+}
